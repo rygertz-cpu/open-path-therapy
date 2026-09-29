@@ -20,9 +20,9 @@
     nav a { margin-left:24px; text-decoration:none; color:inherit; font-size:.94rem; }
     nav a:hover { opacity:.78; }
     .hero { min-height: max(700px, 100svh); display:grid; place-items:center; text-align:center; padding:130px 20px 86px; position:relative; isolation:isolate; overflow:hidden; color:#fff; background:#46594c; }
-    .hero::before { content:""; position:absolute; inset:0; z-index:-2; background:url("https://images.unsplash.com/photo-1725782226363-68244e2db716?auto=format&fit=crop&w=2400&q=88") center 55%/cover no-repeat; }
-    .hero::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(15,32,27,.40),rgba(15,32,27,.18) 42%,rgba(15,32,27,.48)); }
-    .hero-content { width:min(820px,100%); margin:auto; }
+    .hero::before { content:""; position:absolute; inset:0; z-index:0; background:url("https://images.unsplash.com/photo-1725782226363-68244e2db716?auto=format&fit=crop&w=2400&q=88") center 55%/cover no-repeat; }
+    .hero::after { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(15,32,27,.40),rgba(15,32,27,.18) 42%,rgba(15,32,27,.48)); }
+    .hero-content { position:relative; z-index:2; width:min(820px,100%); margin:auto; }
     .eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:.77rem; font-weight:700; color:#667a70; }
     .hero .eyebrow { color:#f2e8da; }
     h1,h2 { font-family:Georgia,"Times New Roman",serif; font-weight:500; line-height:1.12; }
