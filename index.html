@@ -3,31 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f5ef">
-  <meta name="description" content="Thoughtful, supportive psychotherapy for life's difficult seasons and meaningful change.">
-  <title>Open Path Therapy | A space to find your way</title>
+  <meta name="theme-color" content="#203a33">
+  <meta name="description" content="Thoughtful, supportive psychotherapy with Ryan Gertz, LMFT.">
+  <title>Ryan Gertz, LMFT | Psychotherapy</title>
   <style>
-    :root { color-scheme: light; --ink:#243b36; --muted:#596c65; --sage:#dce8df; --cream:#f7f5ef; --clay:#b66d50; --line:#d9dfd8; }
+    :root { color-scheme: light; --ink:#243b36; --muted:#596c65; --cream:#f7f5ef; --line:#d9dfd8; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { margin:0; background:var(--cream); color:var(--ink); font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
     a { color:inherit; }
     .wrap { width:min(1100px, calc(100% - 40px)); margin:auto; }
     header { display:flex; justify-content:space-between; align-items:center; padding:24px 0; }
-    .brand { font-family:Georgia,serif; font-size:1.25rem; font-weight:600; text-decoration:none; letter-spacing:.01em; }
-    nav a { margin-left:24px; text-decoration:none; color:var(--muted); font-size:.94rem; }
-    nav a:hover { color:var(--ink); }
-    .hero { display:grid; grid-template-columns:1.2fr .8fr; gap:56px; align-items:center; padding:92px 0 100px; }
+    .site-header { position:absolute; z-index:2; top:0; left:50%; transform:translateX(-50%); width:min(1100px, calc(100% - 40px)); color:#fff; }
+    .brand { font-family:Georgia,serif; font-size:1.45rem; font-weight:600; text-decoration:none; letter-spacing:.01em; }
+    .brand small { font:600 .7em/1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; letter-spacing:.1em; margin-left:.35em; }
+    nav a { margin-left:24px; text-decoration:none; color:inherit; font-size:.94rem; }
+    nav a:hover { opacity:.78; }
+    .hero { min-height: max(700px, 100svh); display:grid; place-items:center; text-align:center; padding:130px 20px 86px; position:relative; isolation:isolate; overflow:hidden; color:#fff; background:#46594c; }
+    .hero::before { content:""; position:absolute; inset:0; z-index:-2; background:url("https://images.unsplash.com/photo-1725782226363-68244e2db716?auto=format&fit=crop&w=2400&q=88") center 55%/cover no-repeat; }
+    .hero::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(15,32,27,.40),rgba(15,32,27,.18) 42%,rgba(15,32,27,.48)); }
+    .hero-content { width:min(820px,100%); margin:auto; }
     .eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:.77rem; font-weight:700; color:#667a70; }
+    .hero .eyebrow { color:#f2e8da; }
     h1,h2 { font-family:Georgia,"Times New Roman",serif; font-weight:500; line-height:1.12; }
-    h1 { font-size:clamp(3rem,6.4vw,5.4rem); letter-spacing:-.04em; margin:18px 0 22px; max-width:700px; }
-    .lead { font-size:1.2rem; color:var(--muted); max-width:560px; }
-    .button { display:inline-block; background:var(--ink); color:white; text-decoration:none; padding:13px 22px; border-radius:999px; margin-top:20px; font-weight:600; }
+    h1 { font-size:clamp(3rem,7vw,6rem); letter-spacing:-.04em; margin:18px auto 22px; max-width:800px; text-wrap:balance; }
+    .lead { font-size:1.2rem; color:var(--muted); max-width:680px; }
+    .hero .lead { color:rgba(255,255,255,.92); margin:0 auto; }
+    .button { display:inline-block; background:var(--ink); color:white; text-decoration:none; padding:13px 22px; border-radius:999px; margin-top:26px; font-weight:600; }
     .button:hover { background:#36584e; }
-    .art { min-height:390px; background:var(--sage); border-radius:48% 48% 22px 22px; position:relative; overflow:hidden; display:grid; place-items:center; }
-    .sun { width:190px; height:190px; border-radius:50%; background:#e9c3a6; position:absolute; top:52px; right:40px; }
-    .hill { position:absolute; width:130%; height:230px; border-radius:50% 50% 0 0; bottom:-110px; left:-15%; background:#a6bdad; transform:rotate(-8deg); }
-    .hill.two { bottom:-145px; left:-20%; background:#779789; transform:rotate(9deg); }
+    .hero .button { background:#fff; color:var(--ink); }
+    .hero .button:hover { background:#f2e8da; }
     section { padding:76px 0; border-top:1px solid var(--line); }
     h2 { font-size:clamp(2.2rem,4vw,3.5rem); margin:12px 0 18px; }
     .intro { max-width:680px; color:var(--muted); font-size:1.08rem; }
@@ -36,30 +41,29 @@
     .card h3 { font-family:Georgia,serif; font-size:1.35rem; font-weight:500; margin:0 0 8px; }
     .card p { color:var(--muted); margin:0; }
     .about { display:grid; grid-template-columns:.7fr 1.3fr; gap:48px; align-items:start; }
-    .note { background:var(--sage); border-radius:18px; padding:28px; color:var(--ink); }
     .contact { background:var(--ink); color:#fffefa; border-radius:24px; padding:48px; display:flex; justify-content:space-between; align-items:center; gap:24px; }
     .contact p { color:#d6e0d9; margin-bottom:0; }
     .contact .button { background:#fffefa; color:var(--ink); white-space:nowrap; }
     footer { padding:28px 0; color:var(--muted); font-size:.88rem; display:flex; justify-content:space-between; gap:20px; }
-    @media(max-width:760px) { .hero,.about { grid-template-columns:1fr; gap:32px; padding:62px 0; } .art { min-height:290px; } .cards { grid-template-columns:1fr; } .contact { padding:30px; display:block; } nav a { margin-left:12px; } }
-    @media(max-width:430px) { nav a:first-child { display:none; } .wrap { width:min(100% - 28px,1100px); } footer { display:block; } }
+    footer a { text-decoration:none; }
+    @media(max-width:760px) { .hero { min-height:760px; padding-top:148px; } .about { grid-template-columns:1fr; gap:32px; padding:62px 0; } .cards { grid-template-columns:1fr; } .contact { padding:30px; display:block; } nav a { margin-left:12px; } }
+    @media(max-width:430px) { nav a:first-child { display:none; } .wrap,.site-header { width:min(100% - 28px,1100px); } footer { display:block; } }
   </style>
 </head>
 <body>
-  <header class="wrap">
-    <a class="brand" href="#top">Open Path Therapy</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#top"><span>Ryan Gertz</span><small>LMFT</small></a>
     <nav aria-label="Main navigation"><a href="#approach">Approach</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
   </header>
   <main id="top">
-    <div class="wrap hero">
-      <div>
+    <section class="hero" aria-label="A misty field glowing in the warm light of sunrise">
+      <div class="hero-content">
         <div class="eyebrow">A space for you</div>
         <h1>You don't have to find your way alone.</h1>
         <p class="lead">Therapy can help you pause, understand what you're carrying, and move toward a life that feels more like your own.</p>
         <a class="button" href="#contact">Take the first step</a>
       </div>
-      <div class="art" role="img" aria-label="Abstract illustration of a warm sun over soft green hills"><div class="sun"></div><div class="hill"></div><div class="hill two"></div></div>
-    </div>
+    </section>
     <section id="approach">
       <div class="wrap">
         <div class="eyebrow">Thoughtful, collaborative care</div>
@@ -75,17 +79,17 @@
     <section id="about">
       <div class="wrap about">
         <div><div class="eyebrow">A little about therapy</div><h2>Care that starts with listening.</h2></div>
-        <div><p class="intro">Beginning therapy is a personal decision. Sessions are a confidential, nonjudgmental space where your experiences are taken seriously and your goals guide the work.</p><p class="intro">Your therapist’s name, credentials, specialties, location, and availability should be added here so visitors can decide whether the practice is the right fit.</p></div>
+        <div><p class="intro">Beginning therapy is a personal decision. Sessions are a confidential, nonjudgmental space where your experiences are taken seriously and your goals guide the work.</p><p class="intro">Add your practice location, specialties, and availability here so visitors can decide whether this is the right fit.</p></div>
       </div>
     </section>
     <section id="contact">
       <div class="wrap contact">
         <div><div class="eyebrow" style="color:#c8d8cc">Whenever you're ready</div><h2>Let's start with a conversation.</h2><p>Add your preferred contact method and consultation details here.</p></div>
-        <a class="button" href="mailto:hello@example.com">Get in touch</a>
+        <a class="button" href="mailto:your-email@example.com">Get in touch</a>
       </div>
     </section>
   </main>
-  <footer class="wrap"><span>© <span id="year"></span> Open Path Therapy</span><span>This website is informational and is not a substitute for emergency care.</span></footer>
+  <footer class="wrap"><span>© <span id="year"></span> Ryan Gertz, LMFT</span><span>Photo: <a href="https://unsplash.com/photos/a-field-of-grass-with-fog-in-the-background-PE6eVSKXLhs">Ayla Blaise / Unsplash</a> · Informational only; not emergency care.</span></footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
